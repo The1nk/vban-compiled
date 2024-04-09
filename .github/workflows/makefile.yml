@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Install dependencies
-      run: sudo apt-get install -y git automake libasound2 libasound2-dev  build-essential
+      run: sudo apt-get install -y git automake build-essential libasound2 libasound2-dev libpulse0 libpulse-dev libjack0 libjack-dev
 
     - name: configure
       run: ./autogen.sh
