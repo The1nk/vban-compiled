@@ -17,17 +17,19 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y git automake build-essential libasound2 libasound2-dev libpulse0 libpulse-dev libjack0 libjack-dev
 
-    - name: configure
+    - name: Execute autogen.sh
       run: ./autogen.sh
       
-    - name: configure
-      run: ./configure --disable-pulseaudio --disable-jack
+    - name: Execute configure
+      run: ./configure 
 
-    - name: Install dependencies
+    - name: Execute make command
       run: make
 
     - name: Run check
       run: make check
 
-    - name: Run distcheck
-      run: make distcheck
+    - uses: actions/upload-artifact@v4
+      with:
+        name: vban_receptor
+        path: /home/runner/work/vban-compiled/vban-compiled/src/vban_receptor
