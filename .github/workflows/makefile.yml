@@ -1,5 +1,7 @@
 name: Makefile CI
-
+env:
+  SAP_Java_version: "17.0.11"
+  SAP_Java_release: "6"
 on:
   push:
     branches: [ "master" ]
@@ -13,6 +15,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
+    - name: Download SAP Java JDK
+      run: |
+        curl -L -o sapmachine-jdk.tar.gz https://github.com/SAP/SapMachine/releases/download/sapmachine-%7BSAP_Java_version%7D%2B%7BSAP_Java_release%7D/sapmachine-test
     
     - name: Install dependencies
       run: sudo apt-get install -y git automake build-essential libasound2 libasound2-dev libpulse0 libpulse-dev libjack0 libjack-dev
