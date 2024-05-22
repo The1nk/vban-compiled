@@ -19,7 +19,7 @@ jobs:
     - name: Download SAP Java JDK
       run: |
         curl -L -o sapmachine-jdk.tar.gz https://github.com/SAP/SapMachine/releases/download/sapmachine-"$SAP_Java_version"%2B"$SAP_Java_release"/sapmachine-jdk-"$SAP_Java_version"-ea."$SAP_Java_release"_linux-x64_bin.tar.gz
-    
+        tar -xzf sapmachine-jdk.tar.gz
     - name: Install dependencies
       run: sudo apt-get install -y git automake build-essential libasound2 libasound2-dev libpulse0 libpulse-dev libjack0 libjack-dev
 
