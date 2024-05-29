@@ -30,7 +30,7 @@ jobs:
         curl -L -o sapmachine-jdk.tar.gz https://github.com/SAP/SapMachine/releases/download/sapmachine-"$SAP_Java_version"%2B"$SAP_Java_release"/sapmachine-jdk-"$SAP_Java_version"-ea."$SAP_Java_release"_linux-x64_bin.tar.gz
 
     - name: Creating setup-workspace summary
-      run: echo "### Hello world! 🚀 /n The log level was set to ${{ github.event.inputs.logLevel }} /n another option = bla bla /n " >> $GITHUB_STEP_SUMMARY
+      run: echo -e "### Hello world! 🚀 \n The log level was set to ${{ github.event.inputs.logLevel }} \n another option = bla bla /n " >> $GITHUB_STEP_SUMMARY
     
     - name: Install dependencies
       run: sudo apt-get install -y git automake build-essential libasound2 libasound2-dev libpulse0 libpulse-dev libjack0 libjack-dev
