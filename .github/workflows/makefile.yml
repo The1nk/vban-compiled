@@ -56,3 +56,15 @@ jobs:
       with:
         name: vban_receptor
         path: /home/runner/work/vban-compiled/vban-compiled/src/vban_receptor
+        
+    - uses: actions/upload-artifact@v4
+      with:
+        name: vban_emitter
+        path: /home/runner/work/vban-compiled/vban-compiled/src/vban_emitter
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: vban_sendtext
+        path: /home/runner/work/vban-compiled/vban-compiled/src/vban_sendtext
+
+      
